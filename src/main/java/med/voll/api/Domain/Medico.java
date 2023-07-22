@@ -2,6 +2,7 @@ package med.voll.api.Domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import med.voll.api.DTO.DadosAtualizacaoMedico;
 import med.voll.api.DTO.DadosCadastroMedico;
 
 @Table(name = "medicos")
@@ -26,6 +27,8 @@ public class Medico {
     @Embedded
     private Endereco endereco;
 
+    private Boolean status;
+
     public Medico(DadosCadastroMedico dados) {
         this.nome = dados.nome();
         this.email = dados.email();
@@ -33,6 +36,22 @@ public class Medico {
         this.crm = dados.crm();
         this.especialidade = dados.especialidade();
         this.endereco = new Endereco(dados.endereco());
+        this.status = true;
     }
 
+    public void atualizar(DadosAtualizacaoMedico dadosAtualizacaoMedico) {
+        if (dadosAtualizacaoMedico.nome() != null) {
+            this.nome = dadosAtualizacaoMedico.nome();
+        }
+        if (dadosAtualizacaoMedico.telefone() != null) {
+            this.telefone = dadosAtualizacaoMedico.telefone();
+        }
+        if (dadosAtualizacaoMedico.dadosEndereco() != null) {
+            this.endereco.atualizarInformacoes(dadosAtualizacaoMedico.dadosEndereco());
+        }
+    }
+
+    public void inativo() {
+        this.status = false;
+    }
 }
