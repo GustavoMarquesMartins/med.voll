@@ -43,8 +43,8 @@ public class Paciente {
         if (dadosAtualizacaoPaciente.telefone() != null) {
             this.telefone = dadosAtualizacaoPaciente.telefone();
         }
-        if (dadosAtualizacaoPaciente.endereco() != null) {
-            this.endereco.atualizarInformacoes(dadosAtualizacaoPaciente.endereco());
+        if (dadosAtualizacaoPaciente.dadosEndereco() != null) {
+            this.endereco.atualizarInformacoes(dadosAtualizacaoPaciente.dadosEndereco());
         }
     }
     public void inativo() {
