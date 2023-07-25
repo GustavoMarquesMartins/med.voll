@@ -1,12 +1,13 @@
-package med.voll.api.Domain;
+package med.voll.api.paciente.Domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import med.voll.api.DTO.DadosAtualizacaoPaciente;
-import med.voll.api.DTO.DadosCadastroPaciente;
+import med.voll.api.medico.Domain.Endereco;
+import med.voll.api.paciente.DTO.DadosAtualizacaoPaciente;
+import med.voll.api.paciente.DTO.DadosCadastroPaciente;
 
 @Entity(name = "pacientes")
 @Table(name = "pacientes")
@@ -47,6 +48,7 @@ public class Paciente {
             this.endereco.atualizarInformacoes(dadosAtualizacaoPaciente.dadosEndereco());
         }
     }
+
     public void inativo() {
         this.status = false;
     }
