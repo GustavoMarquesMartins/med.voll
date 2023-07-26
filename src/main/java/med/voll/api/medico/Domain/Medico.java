@@ -2,6 +2,7 @@ package med.voll.api.medico.Domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import med.voll.api.endereco.Domain.Endereco;
 import med.voll.api.medico.DTO.DadosCadastroMedico;
 import med.voll.api.medico.DTO.DadosAtualizacaoMedico;
 
