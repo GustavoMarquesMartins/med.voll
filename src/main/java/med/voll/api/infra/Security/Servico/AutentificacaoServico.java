@@ -1,6 +1,6 @@
-package med.voll.api.usuario.Servico;
+package med.voll.api.infra.Security.Servico;
 
-import med.voll.api.usuario.Repository.UsuarioRepository;
+import med.voll.api.infra.Security.Repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
