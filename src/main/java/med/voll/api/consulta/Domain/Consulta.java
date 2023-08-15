@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @EqualsAndHashCode(of = "id")
 public class Consulta {
 
@@ -28,4 +29,9 @@ public class Consulta {
     private Paciente paciente;
 
     private LocalDateTime data;
+    private boolean status;
+
+    public void cancelar() {
+        this.status = false;
+    }
 }
