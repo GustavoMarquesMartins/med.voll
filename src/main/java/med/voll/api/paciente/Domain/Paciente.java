@@ -9,7 +9,7 @@ import med.voll.api.endereco.Domain.Endereco;
 import med.voll.api.paciente.DTO.DadosAtualizacaoPaciente;
 import med.voll.api.paciente.DTO.DadosCadastroPaciente;
 
-@Entity(name = "pacientes")
+@Entity(name = "Paciente")
 @Table(name = "pacientes")
 @Data
 @EqualsAndHashCode(of = "id")

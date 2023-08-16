@@ -21,5 +21,4 @@ public class CancelamentoDeConsulta {
         var consulta = consultaRepository.getReferenceById(dados.idConsulta());
         consulta.cancelar();
     }
-
 }

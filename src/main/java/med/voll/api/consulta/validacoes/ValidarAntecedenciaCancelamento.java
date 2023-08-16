@@ -1,5 +1,6 @@
 package med.voll.api.consulta.validacoes;
 
+import lombok.EqualsAndHashCode;
 import med.voll.api.consulta.DTO.DadosAgendamentoConsulta;
 import med.voll.api.consulta.DTO.DadosCancelamentoConsulta;
 import med.voll.api.consulta.Respository.ConsultaRepository;
@@ -20,7 +21,7 @@ public class ValidarAntecedenciaCancelamento {
 
     public void validarAntecedenciaCancelamento(DadosCancelamentoConsulta dados) {
         var consulta = consultaRepository.getReferenceById(dados.idConsulta());
-        if(!consulta.isStatus()){
+        if (!consulta.isStatus()) {
             throw new ValidacaoException("A consulta já cancelada");
         }
         var diff = Duration.between(LocalDateTime.now(), consulta.getData());
