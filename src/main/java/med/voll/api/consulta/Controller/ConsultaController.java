@@ -1,5 +1,6 @@
 package med.voll.api.consulta.Controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.consulta.DTO.DadosAgendamentoConsulta;
 import med.voll.api.consulta.DTO.DadosCancelamentoConsulta;
@@ -17,6 +18,7 @@ import java.util.ResourceBundle;
 
 @RestController
 @RequestMapping("consultas")
+@SecurityRequirement(name = "bearer-key")
 public class ConsultaController {
     @Autowired
     private AgendaDeConsultas agenda;

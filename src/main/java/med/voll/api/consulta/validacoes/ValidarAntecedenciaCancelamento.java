@@ -20,7 +20,7 @@ public class ValidarAntecedenciaCancelamento {
     private ConsultaRepository consultaRepository;
 
     public void validarAntecedenciaCancelamento(DadosCancelamentoConsulta dados) {
-        var consulta = consultaRepository.getReferenceById(dados.idConsulta());
+        var consulta = consultaRepository.findById(dados.idConsulta()).orElseThrow(() -> new ValidacaoException("Consulta não existe ou está inatíva !"));
         if (!consulta.isStatus()) {
             throw new ValidacaoException("A consulta já cancelada");
         }

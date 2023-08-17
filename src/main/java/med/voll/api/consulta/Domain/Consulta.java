@@ -29,6 +29,7 @@ public class Consulta {
     private Paciente paciente;
 
     private LocalDateTime data;
+
     private boolean status;
 
     public void cancelar() {
