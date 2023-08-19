@@ -47,10 +47,10 @@ class ConsultaControllerTest {
     private AgendaDeConsultas agendaDeConsultas;
 
     @Test
-    @DisplayName("Deveria devolver codigo http 400 quando informaçoes estao invalidas")
+    @DisplayName("Deveria devolver codigo http 200 quando informaçoes estao invalidas")
     @WithMockUser
         // Simula um usuário autenticado para o teste
-    void agendar_cenario1() throws Exception {
+    void agendarCenario1() throws Exception {
         // Definindo os parâmetros que serão usados no teste
         var data = LocalDateTime.now().plusHours(1);
         var especialidade = Especialidade.CARDIOLOGIA;
